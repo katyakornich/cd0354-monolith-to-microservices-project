@@ -15,7 +15,6 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker image prune --all
   - docker-compose -f docker-compose-build.yaml build --parallel
   - docker tag cd0354-monolith-to-microservices-project katyakornich/cd0354-monolith-to-microservices-project:latest
 
