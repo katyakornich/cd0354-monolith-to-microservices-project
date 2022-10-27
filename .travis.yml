@@ -16,8 +16,7 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker-compose -f docker-compose-build.yml build --parallel
-  - docker tag cd0354-monolith-to-microservices-project katyakornich/cd0354-monolith-to-microservices-project
-
+ 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push katyakornich/cd0354-monolith-to-microservices-project
